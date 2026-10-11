@@ -1,9 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Navbar } from './components/navbar/navbar';
+import { LPokemon } from './components/lpokemon/lpokemon';
 
 @Component({
-  imports: [Navbar],
+  imports: [Navbar, LPokemon],
   selector: 'app-root',
 
   templateUrl: './app.html',
