@@ -7,11 +7,11 @@
 
           <div class="d-flex justify-content-center gap-2">
             @for (tipo of poke.types; track tipo) {
-              <span class="badge rouded-pill text-light">{{ tipo.type.name }}</span>
+              <span class="badge rouded-pill text-light">{{ tipo }}</span>
             }
           </div>
-          @if (poke.sprites) {
-            <img [src]="poke.sprites.front_default" [alt]="poke.name" />
+          @if (poke.sprite) {
+            <img [src]="poke.sprite" [alt]="poke.name" />
           } @else {
             <p>Imagem não disponível</p>
           }
