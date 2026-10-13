@@ -66,4 +66,8 @@ export class LPokemon {
       initialValue: null,
     },
   );
+
+  protected paraTitleCase(texto: string): string {
+    return texto.toLocaleLowerCase().replace(/\b\w/g, (l) => l.toUpperCase());
+  }
 }
