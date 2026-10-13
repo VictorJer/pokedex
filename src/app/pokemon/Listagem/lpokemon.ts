@@ -50,5 +50,4 @@ export class LPokemon {
     { initialValue: [] as PokemonCardViewModel[], }
   );
 
-  protected readonly paraTitleCase = paraTitleCase;
 }
