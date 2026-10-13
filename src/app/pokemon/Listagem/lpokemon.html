@@ -3,15 +3,15 @@
     @for (poke of listagemPokemon(); track poke.id) {
       <div class="col-md-6 col-lg-2">
         <div class="card p-3 text-center">
-          <span class="fs-6 fw-medium card-title">{{ paraTitleCase(poke.name) }}</span>
+          <span class="fs-6 fw-medium card-title">{{ poke.displayName }}</span>
 
           <div class="d-flex justify-content-center gap-2">
-            @for (tipo of poke.types; track tipo) {
-              <span class="badge rouded-pill text-light">{{ paraTitleCase(tipo) }}</span>
+            @for (tipo of poke.types; track tipo.name) {
+              <span class="badge rouded-pill text-light">{{ tipo.displayName }}</span>
             }
           </div>
-          @if (poke.sprite) {
-            <img [src]="poke.sprite" [alt]="poke.name" />
+          @if (poke.imageUrl) {
+            <img [src]="poke.imageUrl" [alt]="poke.imageAlt" />
           } @else {
             <p>Imagem não disponível</p>
           }
