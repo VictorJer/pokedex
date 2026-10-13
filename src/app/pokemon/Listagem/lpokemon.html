@@ -7,7 +7,7 @@
 
           <div class="d-flex justify-content-center gap-2">
             @for (tipo of poke.types; track tipo.name) {
-              <span class="badge rouded-pill text-light">{{ tipo.displayName }}</span>
+              <span class="badge rouded-pill text-light" [style.background-color]="tipo.color">{{ tipo.displayName }}</span>
             }
           </div>
           @if (poke.imageUrl) {
