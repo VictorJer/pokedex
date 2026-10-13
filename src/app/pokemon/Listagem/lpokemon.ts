@@ -16,6 +16,7 @@ interface PokemonCardViewModel {
   readonly imageUrl: string | null;
   readonly imageAlt: string;
   readonly types: readonly PokemonTypeViewModel [];
+  readonly background: string;
 }
 
 const DEFOULT_TYPE_COLOR = '#6C757D';
@@ -57,12 +58,16 @@ function paraCardViewModel(dto: Pokemon): PokemonCardViewModel {
     color: corDoTipo(type.toLowerCase()),
   }));
 
+  const primeiraCor = types[0]?.color ?? DEFOULT_TYPE_COLOR;
+  const seguntaCor = types[1]?.color ?? primeiraCor;
+
   return {
     id: dto.id,
     displayName: displayName,
     imageUrl: dto.sprite,
     imageAlt: `Imagem de ${displayName}`,
     types: types,
+    background: `linear-gradient(#182033, #182033) padding-box, linear-gradient(135deg, ${primeiraCor} 0% 50%, ${seguntaCor} 50% 100%) border-box`,
   }
 }
 
