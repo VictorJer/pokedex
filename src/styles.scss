@@ -1,3 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
-@use 'bootstrap/scss/bootstrap';
+
+@use 'bootstrap/scss/bootstrap' with (
+  $font-family-sans-serif: (
+    'Nunito Sans',
+    system-ui,
+    sans-serif,
+  ),
+  $font-family-base: (
+    'Nunito Sans',
+    system-ui,
+    sans-serif,
+  ),
+  $headings-font-family: (
+    'Oxanium',
+    system-ui,
+    sans-serif,
+  )
+);
 @use 'bootstrap-icons';
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Oxanium:wght@200..800&display=swap');
+
+:root {
+  --pokedex-font-display: 'Oxanium', system-ui, sans-serif;
+  --pokedex-font-body: 'Nunito Sans', system-ui, sans-serif;
+}
+
+.navbar-brand{
+  font-family: var(--pokedex-font-display);
+  font-style: italic;
+}
+
+.navbar .nav-link{
+  font-family: var(--pokedex-font-display);
+
+}
+
+.card-title{
+  font-family: var(--pokedex-font-display);
+
+}
