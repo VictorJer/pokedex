@@ -4,10 +4,12 @@ import { PokemonService } from '../data/pokemon.service';
 import { Pokemon, PokemonTypeViewModel } from '../pokemon.model';
 import { map } from 'rxjs';
 import { corDoTipo, obterCorBackgrond, paraTitleCase,  } from '../pokemon.util';
+import { RouterLink } from '@angular/router';
 
 
 interface PokemonCardViewModel {
   readonly id: number;
+  readonly name: string;
   readonly displayName: string;
   readonly imageUrl: string | null;
   readonly imageAlt: string;
@@ -26,6 +28,7 @@ function paraCardViewModel(dto: Pokemon): PokemonCardViewModel {
 
   return {
     id: dto.id,
+    name: dto.name,
     displayName: displayName,
     imageUrl: dto.sprite,
     imageAlt: `Imagem de ${displayName}`,
@@ -35,7 +38,7 @@ function paraCardViewModel(dto: Pokemon): PokemonCardViewModel {
 }
 
 @Component({
-  imports: [],
+  imports: [RouterLink],
   styleUrl: 'lpokemon.scss',
   selector: 'app-lpokemon',
   templateUrl: './lpokemon.html',

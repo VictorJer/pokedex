@@ -2,7 +2,8 @@
   <div class="row g-3">
     @for (poke of listagemPokemon(); track poke.id) {
       <div class="col-md-6 col-lg-2">
-        <div class="card p-3 text-center" [style.border]="'2px solid transparent'" [style.background]="poke.background">
+        <a class="card p-3 text-center text-decoration-none" [style.border]="'2px solid transparent'" [style.background]="poke.background"
+        [routerLink]="['/pokemon', poke.name]">
           <span class="fs-6 fw-medium card-title">{{ poke.displayName }}</span>
 
           <div class="d-flex justify-content-center gap-2">
@@ -15,7 +16,7 @@
           } @else {
             <p>Imagem não disponível</p>
           }
-        </div>
+        </a>
       </div>
     }
   </div>

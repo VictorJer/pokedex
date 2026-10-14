@@ -4,7 +4,7 @@ import { Navbar } from './components/navbar/navbar';
 import { LPokemon } from './pokemon/Listagem/lpokemon';
 
 @Component({
-  imports: [Navbar, LPokemon],
+  imports: [Navbar, RouterOutlet],
   selector: 'app-root',
 
   templateUrl: './app.html',
